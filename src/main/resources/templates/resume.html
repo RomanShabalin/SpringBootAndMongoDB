@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Resume List</title>
+</head>
+<body>
+<h2>Resume List</h2>
+<hr/>
+<table class="table">
+    <tr>
+        <th>ID</th>
+    </tr>
+    <tr th:each="resume : ${resumes}">
+        <td><a th:text="${resume.id}" th:href="@{'/show/' + ${resume.id}}"></a></td>
+    </tr>
+</table>
+<br/>
+<hr/>
+<a href="/create">Create resume</a>
+</body>
+</html>

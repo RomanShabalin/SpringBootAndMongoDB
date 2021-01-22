@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Resume</title>
+</head>
+<body>
+<h2 th:text="${'Edit resume of ' + resume.firstName + ' ' + resume.lastName}">Resume</h2>
+<form action="/update">
+    <div>
+        <label>First name: </label>
+        <input type="text" name="firstName" th:value="${resume.firstName}"/>
+    </div>
+    <div>
+        <label>Last name: </label>
+        <input type="text" name="lastName" th:value="${resume.lastName}"/>
+    </div>
+    <div>
+        <label>Age: </label>
+        <input type="number" name="age" th:value="${resume.age}"/>
+    </div>
+    <div>
+        <label>Email: </label>
+        <input type="email" name="email" th:value="${resume.email}"/>
+    </div>
+    <div>
+        <label>City: </label>
+        <input type="text" name="city" th:value="${resume.city}"/>
+    </div>
+    <div>
+        <label>Vacancy: </label>
+        <input type="text" name="vacancy" th:value="${resume.vacancy}"/>
+    </div>
+    <div>
+        <label>Salary: </label>
+        <input type="number" name="salary" th:value="${resume.salary}"/>
+    </div>
+    <div>
+        <label>Educational institution: </label>
+        <input type="text" name="educationalInstitution" th:value="${resume.educationalInstitution}"/>
+    </div>
+    <input type="hidden" name="id" th:value="${resume.id}" />
+    <button type="submit">Save</button>
+</form>
+
+<br/>
+<hr/>
+<a href="/resume">Resume List</a>
+</body>
+</html>

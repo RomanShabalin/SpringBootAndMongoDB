@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show Resume</title>
+</head>
+<body>
+
+<h2 th:text="${'Resume of ' + resume.firstName + ' ' + resume.lastName}">Resume</h2>
+</br>
+
+<h2 th:text="${'ID: ' + resume.id}">ID</h2>
+<h2 th:text="${'First name: ' + resume.firstName}">First name</h2>
+<h2 th:text="${'Last name: ' + resume.lastName}">Last name</h2>
+<h2 th:text="${'Age: ' + resume.age}">Age</h2>
+<h2 th:text="${'Email: ' + resume.email}">Email</h2>
+<h2 th:text="${'City: ' + resume.city}">City</h2>
+<h2 th:text="${'Vacancy: ' + resume.vacancy}">Vacancy</h2>
+<h2 th:text="${'Salary: ' + resume.salary}">Salary</h2>
+<h2 th:text="${'Educational institution: ' + resume.educationalInstitution}">Educational institution</h2>
+
+</br>
+<a th:href="@{'/edit/' + ${resume.id}}">Edit</a>
+<form action="/delete">
+    <input type="hidden" name="id" th:value="${resume.id}"/>
+    <h2><input type="submit" value="Delete"/>
+    </h2>
+</form>
+<br/>
+<hr/>
+<a href="/resume">Resume List</a>
+</body>
+</html>
